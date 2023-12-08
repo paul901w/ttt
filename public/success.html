@@ -1,0 +1,47 @@
+<!-- success.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animation.css">
+  
+</head>
+<body>
+  <div class="bubble-container">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+  <div class="container">
+    <h1>Success Page</h1>
+    <form action="/submit-details" method="post">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+      <br>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+      <br>
+      <label for="dob">Date of Birth:</label>
+      <!-- Set max attribute to restrict the age to 12 months -->
+      <input type="date" id="dob" name="dob" required min="1923-01-01">
+      <br>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <script>
+    // Set the max attribute dynamically to the current date
+    const currentDate = new Date();
+    const maxDate = new Date(currentDate.getFullYear() - 1, currentDate.getMonth(), currentDate.getDate()).toISOString().split('T')[0];
+  
+    document.getElementById('dob').max = maxDate;
+  </script>
+</body>
+</html>

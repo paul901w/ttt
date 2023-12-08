@@ -1,0 +1,48 @@
+.bubble {
+    position: absolute;
+    width: 100px; /* Adjust the width as desired */
+    height: 100px; /* Adjust the height as desired */
+    background-color: #fff170b7; /* Bubble color */
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgb(255, 254, 237); /* Adjust shadow properties */
+    animation: bubbleAnimation 8s ease-in-out infinite;
+    z-index: -2;
+  }
+  
+  .bubble:nth-child(2) {
+    left: 20%;
+  }
+  
+  .bubble:nth-child(3) {
+    left: 70%;
+  }
+  
+  @keyframes bubbleAnimation {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+      box-shadow: 0 0 50px rgb(255, 208, 66)
+    }
+    50% {
+      transform: translateY(30vh) rotate(15deg);
+      box-shadow: 0 0 20px rgb(255, 119, 29); /* Change shadow properties during animation */
+    }
+  }
+  
+  /* Additional random positioning and animation for each bubble */
+  .bubble:nth-child(1) {
+    top: 10%;
+    animation-duration: 50s;
+    animation-delay: 1s;
+  }
+  
+  .bubble:nth-child(2) {
+    top: 40%;
+    animation-duration: 38s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(3) {
+    top: 50%;
+    animation-duration: 27s;
+    animation-delay: 0s;
+  }
